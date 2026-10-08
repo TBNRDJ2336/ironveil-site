@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ironveil Security</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Ironveil home">
+      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 8.7-8 11-4.6-2.3-8-6-8-11V5z" fill="var(--accent)"/><path d="M12 8.5v5.5" stroke="var(--accent-ink)" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span>Ironveil</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#features">Protection</a>
+      <a href="#layers">Layers</a>
+      <a href="#live">Live feed</a>
+      <a href="#check">Password check</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <a class="btn btn-primary" href="#check">Test a password</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="floor" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Account and identity security</span>
+        <h1>Stop account takeovers <span class="hl">before they start.</span></h1>
+        <p class="lead">Ironveil scores every sign-in, link and device in real time. Attacks are blocked at the door, and risky logins are asked for proof.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#check">Test your password</a>
+          <a class="btn btn-ghost" href="#layers">See the defence layers</a>
+        </div>
+        <ul class="proofs">
+          <li>Passkey-first sign-in</li>
+          <li>Zero-knowledge vault</li>
+          <li>Device-bound sessions</li>
+        </ul>
+      </div>
+      <div class="scene" id="scene">
+        <canvas id="c3d" role="img" aria-label="A 3D shield with a keyhole, ringed by orbiting lines while red threat markers are deflected"></canvas>
+        <div class="fallback" aria-hidden="true"></div>
+        <div class="chip chip-a" id="chipA" data-act="blocked">
+          <div class="chip-h"><span class="dot"></span><span class="chip-t">Blocked · credential stuffing</span></div>
+          <span class="chip-m">198.51.100.24</span>
+        </div>
+        <div class="chip chip-b" id="chipB" data-act="challenged">
+          <div class="chip-h"><span class="dot"></span><span class="chip-t">Challenged · impossible-travel sign-in</span></div>
+          <span class="chip-m">203.0.113.77</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Product figures">
+    <div class="wrap stat-grid">
+      <div class="stat"><b>38 ms</b><span>median risk verdict</span></div>
+      <div class="stat"><b>140+</b><span>signals scored per sign-in</span></div>
+      <div class="stat"><b>62</b><span>edge regions</span></div>
+      <div class="stat"><b>6 min</b><span>typical setup</span></div>
+    </div>
+  </section>
+
+  <section class="sec" id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Protection</span>
+        <h2>Six protections that work on the same signal</h2>
+        <p>Each one feeds the others. A suspicious link raises the risk score of the next sign-in, and a trusted device lowers it.</p>
+      </div>
+      <div class="grid-feat">
+        <article class="card tilt">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3>Credential Shield</h3>
+          <p>Compares login velocity, device reuse and known-breach pairs, then challenges or blocks before an account is touched.</p>
+          <span class="tag">Velocity · reuse · breach pairs</span>
+        </article>
+        <article class="card tilt">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12l6-6"/></svg>
+          <h3>Phishing Radar</h3>
+          <p>Scans links at click time, so a page that turned malicious after delivery is still caught. Reads SPF, DKIM and DMARC results too.</p>
+          <span class="tag">SPF · DKIM · DMARC aware</span>
+        </article>
+        <article class="card tilt">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="14" height="10" rx="1.5"/><path d="M8 19h6M11 15v4"/><rect x="17" y="9" width="4" height="10" rx="1"/></svg>
+          <h3>Device Trust</h3>
+          <p>Binds each session to a key held on the device. A stolen cookie replayed from another machine is worthless.</p>
+          <span class="tag">Device-bound sessions</span>
+        </article>
+        <article class="card tilt">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 10.5h5"/></svg>
+          <h3>Breach Watch</h3>
+          <p>Checks your addresses against known breaches using k-anonymity, so the full hash of your password never leaves your device.</p>
+          <span class="tag">k-anonymity lookups</span>
+        </article>
+        <article class="card tilt">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3"/></svg>
+          <h3>Passkey Vault</h3>
+          <p>Create and sync passkeys, with authenticator-app codes and hardware keys as fallbacks when a site is not ready.</p>
+          <span class="tag">FIDO2 · WebAuthn · TOTP (RFC 6238)</span>
+        </article>
+        <article class="card tilt">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L2.5 20h19z"/><path d="M12 10v5M12 17.5v.5"/></svg>
+          <h3>Incident Desk</h3>
+          <p>When something trips, an analyst opens the case with the evidence attached and walks you through containment.</p>
+          <span class="tag">Evidence-first response</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="layers" style="background:var(--bg-2);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Defence in depth</span>
+        <h2>An attacker has to get through four layers</h2>
+        <p>Move over the stack, or pick a layer, to pull it forward. Every request is checked at each one, from the outside in.</p>
+      </div>
+      <div class="layers-grid">
+        <ul class="layer-list" id="layerList">
+          <li><button class="layer-btn" type="button" data-k="edge" aria-pressed="true"><span class="name">Edge</span><span class="desc">Bot scoring, TLS inspection and traffic filtering before a request reaches your app.</span></button></li>
+          <li><button class="layer-btn" type="button" data-k="identity" aria-pressed="false"><span class="name">Identity</span><span class="desc">Passkeys, risk-based step-up and impossible-travel checks on every sign-in.</span></button></li>
+          <li><button class="layer-btn" type="button" data-k="device" aria-pressed="false"><span class="name">Device</span><span class="desc">Session binding and posture checks tie access to a machine you already trust.</span></button></li>
+          <li><button class="layer-btn" type="button" data-k="data" aria-pressed="false"><span class="name">Data</span><span class="desc">Field-level encryption and tamper-evident audit logs protect what attackers are after.</span></button></li>
+        </ul>
+        <div class="stage-wrap" id="stageWrap" aria-hidden="true">
+          <div class="stage" id="stage">
+            <div class="base"></div>
+            <div class="layer on" data-k="data" style="--i:0"><span class="l-name">Data</span><span class="l-sub">AES-256-GCM · audit chain</span></div>
+            <div class="layer" data-k="device" style="--i:1"><span class="l-name">Device</span><span class="l-sub">key-bound session · posture</span></div>
+            <div class="layer" data-k="identity" style="--i:2"><span class="l-name">Identity</span><span class="l-sub">passkey · risk step-up</span></div>
+            <div class="layer" data-k="edge" style="--i:3"><span class="l-name">Edge</span><span class="l-sub">WAF · bot score · TLS</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="live">
+    <div class="wrap feed-grid">
+      <div class="copy-col">
+        <span class="eyebrow">Live feed</span>
+        <h2>What a busy hour looks like</h2>
+        <p>Every event gets a verdict in milliseconds. Low risk passes silently, medium risk asks for a passkey or one-time code, and high risk is stopped and logged with its evidence.</p>
+        <dl class="counters">
+          <div><dt>Screened</dt><dd id="cScreened">48,215</dd></div>
+          <div><dt>Blocked</dt><dd id="cBlocked">1,902</dd></div>
+          <div><dt>Challenged</dt><dd id="cChallenged">377</dd></div>
+        </dl>
+        <p class="note">Sample feed. Source addresses come from ranges reserved for documentation.</p>
+      </div>
+      <div class="tool">
+        <div class="feed-head" aria-hidden="true"><span>Time</span><span>Event</span><span>Source</span><span>Action</span></div>
+        <div id="feedRows" role="log" aria-live="off" aria-label="Sample security events"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="check" style="background:var(--bg-2);border-block:1px solid var(--line)">
+    <div class="wrap check-grid">
+      <div class="copy-col">
+        <span class="eyebrow">Password check</span>
+        <h2>How long would your password last?</h2>
+        <p>The estimate assumes an attacker who has stolen a database of fast hashes and tests ten billion guesses per second. It looks for common words, years, keyboard runs and repeats, which is where most real passwords give themselves away.</p>
+        <p>Everything runs in this page. What you type is never sent anywhere.</p>
+      </div>
+      <div class="tool">
+        <label class="lbl" for="pw">Password to test</label>
+        <div class="pw-row">
+          <input id="pw" type="password" value="Summer2024!" autocomplete="off" spellcheck="false" autocapitalize="off" aria-describedby="pwHint">
+          <button class="btn btn-ghost" type="button" id="pwToggle" aria-pressed="false">Show</button>
+        </div>
+        <p class="hint" id="pwHint">An example is loaded. Replace it with a password you use to see how it scores.</p>
+        <div class="meter" id="meter" data-level="1" role="img" aria-label="Strength 1 of 5"><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="verdict" id="verdict" aria-live="polite">Very weak</p>
+        <dl class="metrics">
+          <div><dt>Length</dt><dd id="mLen">11</dd></div>
+          <div><dt>Character pool</dt><dd id="mPool">95</dd></div>
+          <div><dt>Entropy</dt><dd id="mBits">26 bits</dd></div>
+          <div><dt>Offline crack time</dt><dd id="mTime">Under a second</dd></div>
+        </dl>
+        <ul class="findings" id="findings"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="pricing">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Pricing</span>
+        <h2>Plans for one person, one household, or a whole company</h2>
+        <p>Every plan includes Credential Shield, Phishing Radar and the Passkey Vault. Higher plans add devices, people and admin controls.</p>
+      </div>
+      <div class="bill" role="group" aria-label="Billing period">
+        <button type="button" data-p="m" aria-pressed="true">Monthly</button>
+        <button type="button" data-p="y" aria-pressed="false">Yearly</button>
+      </div>
+      <div class="plans">
+        <article class="plan">
+          <span class="kicker">Personal</span>
+          <div class="price"><span class="amt" data-m="6" data-y="5">$6</span><span class="per">/ month</span></div>
+          <span class="billed">Billed monthly</span>
+          <ul><li>1 person, up to 3 devices</li><li>Passkeys and authenticator codes</li><li>Breach Watch for 3 addresses</li><li>Click-time link scanning</li></ul>
+          <a class="btn btn-ghost" href="#check">Start free trial</a>
+        </article>
+        <article class="plan featured">
+          <span class="kicker">Household</span>
+          <div class="price"><span class="amt" data-m="14" data-y="12">$14</span><span class="per">/ month</span></div>
+          <span class="billed">Billed monthly</span>
+          <ul><li>Up to 6 people, 15 devices</li><li>Shared vault with per-item access</li><li>Family-safe link filtering</li><li>Incident Desk by chat</li></ul>
+          <a class="btn btn-primary" href="#check">Start free trial</a>
+        </article>
+        <article class="plan">
+          <span class="kicker">Business</span>
+          <div class="price"><span class="amt" data-m="9" data-y="8">$9</span><span class="per">/ seat / month</span></div>
+          <span class="billed">Billed monthly</span>
+          <ul><li>Single sign-on and SCIM provisioning</li><li>Policy controls and device posture</li><li>Exportable audit logs</li><li>24/7 Incident Desk</li></ul>
+          <a class="btn btn-ghost" href="#check">Start free trial</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Questions</span>
+        <h2>Straight answers</h2>
+      </div>
+      <div class="faq">
+        <details open><summary>Does Ironveil see my passwords?</summary><p>No. Vault contents are encrypted on your device before they sync, and the password check on this page runs entirely in your browser.</p></details>
+        <details><summary>What happens when a sign-in looks risky?</summary><p>Low risk passes without a prompt. Medium risk asks for a passkey or a one-time code. High risk is blocked and logged with the evidence that triggered it.</p></details>
+        <details><summary>Do I have to replace my current two-step sign-in?</summary><p>No. Ironveil works alongside authenticator apps, text-message codes and hardware keys, and suggests passkeys for accounts that support them.</p></details>
+        <details><summary>Where do the addresses in the live feed come from?</summary><p>The feed is sample data. Its addresses sit in ranges reserved for documentation (192.0.2.0/24, 198.51.100.0/24 and 203.0.113.0/24), so none of them belong to a real network.</p></details>
+        <details><summary>Can I run it for a team?</summary><p>Yes. The Business plan adds single sign-on, SCIM provisioning, policy controls and exportable audit logs.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec closing">
+    <div class="wrap">
+      <span class="eyebrow">Ready when you are</span>
+      <h2>Your next sign-in could be an attack. Be ready for it.</h2>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#check">Test your password</a>
+        <a class="btn btn-ghost" href="#pricing">Compare plans</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="Ironveil home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 8.7-8 11-4.6-2.3-8-6-8-11V5z" fill="var(--accent)"/><path d="M12 8.5v5.5" stroke="var(--accent-ink)" stroke-width="2.2" stroke-linecap="round"/></svg><span>Ironveil</span></a>
+        <p style="margin-top:.7rem;max-width:26ch">Account and identity security for people and teams.</p>
+      </div>
+      <div>
+        <strong style="color:var(--fg)">Explore</strong>
+        <ul><li><a href="#features">Protection</a></li><li><a href="#layers">Layers</a></li><li><a href="#live">Live feed</a></li><li><a href="#pricing">Pricing</a></li></ul>
+      </div>
+      <div>
+        <strong style="color:var(--fg)">Report a vulnerability</strong>
+        <p class="mono" style="margin-top:.6rem">security@ironveil.example</p>
+      </div>
+    </div>
+    <p class="fine">© 2026 Ironveil Security. Sample site with placeholder content.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
